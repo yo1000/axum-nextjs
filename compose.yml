@@ -96,7 +96,7 @@ services:
       KEYCLOAK_URL_HEALTH: http://keycloak:9000/health
       KEYCLOAK_URL_BASE: http://keycloak:8080
       KEYCLOAK_REALM: master
-      KEYCLOAK_CLIENT_ID: spring-nextjs
+      KEYCLOAK_CLIENT_ID: axum-nextjs
       KEYCLOAK_CLIENT_SECRET: Secret-1234567890-Secret
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin

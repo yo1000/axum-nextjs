@@ -3,7 +3,7 @@
 KEYCLOAK_URL_HEALTH=${KEYCLOAK_URL_HEALTH:-"http://localhost:9000/management/health"}
 KEYCLOAK_URL_BASE=${KEYCLOAK_URL_BASE:-"http://localhost:8080"}
 KEYCLOAK_REALM=${KEYCLOAK_REALM:-"master"}
-KEYCLOAK_CLIENT_ID_API=${KEYCLOAK_CLIENT_ID_API:-"axum-nextjs"}
+KEYCLOAK_CLIENT_ID=${KEYCLOAK_CLIENT_ID:-"axum-nextjs"}
 KEYCLOAK_ADMIN=${KEYCLOAK_ADMIN:-"admin"}
 KEYCLOAK_ADMIN_PASSWORD=${KEYCLOAK_ADMIN_PASSWORD:-"admin"}
 
@@ -38,7 +38,7 @@ curl -s \
   -H "Content-Type: application/json" \
   -H "Authorization: bearer ${KC_ACCESS_TOKEN}" \
   -d "{
-    \"clientId\": \"${KEYCLOAK_CLIENT_ID_API}\",
+    \"clientId\": \"${KEYCLOAK_CLIENT_ID}\",
     \"clientAuthenticatorType\": \"client-secret\",
     \"implicitFlowEnabled\": true,
     \"publicClient\": true,
@@ -52,7 +52,7 @@ curl -s \
   -X GET \
   -H "Content-Type: application/json" \
   -H "Authorization: bearer ${KC_ACCESS_TOKEN}" \
-  "${KEYCLOAK_URL_BASE}/admin/realms/${KEYCLOAK_REALM}/clients?clientId=${KEYCLOAK_CLIENT_ID_API}" \
+  "${KEYCLOAK_URL_BASE}/admin/realms/${KEYCLOAK_REALM}/clients?clientId=${KEYCLOAK_CLIENT_ID}" \
 )
 
 KC_CLIENT_ID=$(
