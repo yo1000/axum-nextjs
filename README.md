@@ -50,7 +50,7 @@ cargo run
 ### UI (TypeScript - Next.js)
 
 ```bash
-(cd ui_authjs; \
+(cd ui; \
 export DATABASE_URL="postgresql://postgres:postgres@localhost:5432/postgres?schema=authjs" \
 export KEYCLOAK_ISSUER="http://localhost:8000/realms/master" \
 export KEYCLOAK_CLIENT_ID="axum-nextjs" \
